@@ -1,14 +1,16 @@
-def main():
-    num = int(input("Enter the number to end "))
+def calcrev(n):
     ls = []
-    for i in range(0, num+1):
-        if i == 0:
-            ls.append(0)
-        elif i == 1:
-            ls.append(1)
-        else:
-            ls.append(ls[i-1]+ls[i-2])
-    print(ls)
-if __name__ == "__main__":
-    print("Program to print Fibonacci series...")
+    while n > 0:
+        rem = str(int(n % 10))
+        n = n // 10
+        ls.append(rem)
+    fin = ''.join(ls)
+    return fin
+
+def main():
+    num = int(input("Enter the number :"))
+    res = calcrev(num)
+    print("The reverse of the digits is :", res)
+    
+if __name__ == '__main__':
     main()

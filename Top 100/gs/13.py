@@ -1,12 +1,19 @@
-def main():
+def calcrev(n):
     ls = []
-    num = int(input("Enter the number to reverse "))
-    while num > 0:
-        r = int(num%10)
-        num = int(num/10)
-        ls.append(r)
-        revnum = ''.join([str(i) for i in ls])
-    print("Reversed string is ", revnum)
-if __name__ == "__main__":
-    print("Reverse a given integer...")
+    while n > 0:
+        rem = str(int(n % 10))
+        n = n // 10
+        ls.append(rem)
+    fin = ''.join(ls)
+    return fin
+
+def main():
+    num = int(input("Enter the number :"))
+    res = calcrev(num)
+    if res == str(num):
+        print("Palindrome")
+    else:
+        print("Not palindrome")
+    
+if __name__ == '__main__':
     main()
